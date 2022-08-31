@@ -59,6 +59,18 @@ export default class App extends Component {
     this.setState({ todos: newTodoObj })
   }
 
+  // 清除全部完成的
+  clearAllDone = ()=>{
+    // 获取原来的todos
+    const {todos} = this.state;
+    // 过滤数据
+   const newTodos = todos.filter((todoObj)=>{
+      return !todoObj.done;
+    })
+    // 更新数据
+    this.setState({todos:newTodos})
+  }
+
   render() {
     const { todos } = this.state
     return (
@@ -71,7 +83,7 @@ export default class App extends Component {
               upDataTodo={this.upDataTodo}
               deleteTodo={this.deleteTodo}
             />
-            <Footer todos={todos} checkAllTodo={this.checkAllTodo} />
+            <Footer todos={todos} checkAllTodo={this.checkAllTodo} clearAllDone={this.clearAllDone} />
           </div>
         </div>
       </div>

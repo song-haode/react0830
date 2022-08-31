@@ -14,7 +14,6 @@ export default class Item extends Component {
   // 勾选,取消勾线某一个todo的回调
   handleCheck = (id) => {
     return (event) => {
-      console.log(id, event.target.checked)
       this.props.upDataTodo(id, event.target.checked)
     }
   }
