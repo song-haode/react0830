@@ -1,43 +1,27 @@
 import React, { Component } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import About from './components/About'
-import Home from './components/Home'
+import SonC from './components/SonC'
+import SonF from './components/SonF'
 
 export default class App extends Component {
+  state = {
+    message: 'this is massage',
+   
+  }
+
+  //1. 准备一个函数传给子组件
+  getSonList = (sonMsg) => {
+    console.log('sonMsg',sonMsg);
+    
+  }
   render() {
+    const { message } = this.state
     return (
       <div>
-        <div className="row">
-          <div className="col-xs-offset-2 col-xs-8">
-            <div className="page-header">
-              <h2>React Router Demo</h2>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xs-2 col-xs-offset-2">
-            <div className="list-group">
-              {/* 编写路由器链接 */}
-              <Link className="list-group-item active" to="/about">
-                About
-              </Link>
-              <Link className="list-group-item " to="/home">
-                Home
-              </Link>
-            </div>
-          </div>
-          <div className="col-xs-6">
-            <div className="panel">
-              <div className="panel-body">
-                {/* 注册路由 */}
-                <Routes>
-                  <Route path="/about" component={About} />
-                  <Route path="/home" component={Home} />
-                </Routes>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* 在子组件身上绑定属性 属性名可以自定义 保持语义化 */}
+        {/* 类子组件 */}
+        <SonC msg={message}/>
+        {/* 函数子组件 */}
+        <SonF msg={message} getSonList ={this.getSonList} />
       </div>
     )
   }
