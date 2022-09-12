@@ -1,0 +1,43 @@
+{
+  "liveServer.settings.port": 0,
+  "liveServer.settings.root": "/",
+  "editor.semanticTokenColorCustomizations": {},
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  "liveServer.settings.ChromeDebuggingAttachment": false,
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.ts"
+  ],
+  "liveServer.settings.mount": [],
+  // 修改注释颜色
+  "editor.tokenColorCustomizations": {
+    "comments": {
+      "fontStyle": "bold",
+      "foreground": "#959497"
+    }
+  },
+  // 配置文件类型识别
+  "files.associations": {
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "emmet.includeLanguages": {
+    // jsx的提示
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "vue": "html",
+    "wxml": "html"
+  },
+     // @路径提示
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.ignoreMissingGitWarning": true,
+  "window.zoomLevel": 0
+}
